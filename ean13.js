@@ -6,17 +6,18 @@
 */
 
 var EAN13 = function(a, b, c) {
-    this.a = a.toString();
-    this.b = b.toString();
-    this.c = c.toString();
-    this.code = this.a + this.b + this.c;
+    if(typeof a == "undefined" || typeof b == "undefined" || typeof c == "undefined") {
+        console.error("Initialization error");
+    } else {
+        this.code = a.toString() + b.toString() + c.toString();
+    }
     this.isEAN13 = function(code) {
         code = code.toString();
         if(!code) {
-            console.error("Code unavailable.");
+            console.error("Code unavailable");
             return false;
         } else if(code.length != 12) {
-            console.warn("Not an EAN13 code. Please check your input.");
+            console.warn("Illegal length");
             return false;
         } else {
             return true;

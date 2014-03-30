@@ -13,10 +13,10 @@ var EAN13 = function(a, b, c) {
     this.isEAN13 = function(code) {
         code = code.toString();
         if(!code) {
-            alert("Code unavailable.");
+            console.error("Code unavailable.");
             return false;
         } else if(code.length != 12) {
-            alert("Not an EAN13 code, please check your input.");
+            console.warn("Not an EAN13 code, please check your input.");
             return false;
         } else {
             return true;

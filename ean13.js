@@ -16,7 +16,7 @@ var EAN13 = function(a, b, c) {
             console.error("Code unavailable.");
             return false;
         } else if(code.length != 12) {
-            console.warn("Not an EAN13 code, please check your input.");
+            console.warn("Not an EAN13 code. Please check your input.");
             return false;
         } else {
             return true;

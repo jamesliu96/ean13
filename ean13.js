@@ -20,7 +20,7 @@ var EAN13 = function(a, b, c) {
     };
     this.check = function(code) {
         code = code.toString().replace(/\D/g, "");
-        var _odd = _even = _sum = 0;
+        var _odd = _even = _check = 0;
         for(var _i = 0; _i <= 11; _i++) {
             if(_i % 2 == 0) {
                 _odd += parseInt(code[_i]);

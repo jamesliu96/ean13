@@ -2,17 +2,12 @@
     EAN-13 Code Generator v0.1.1
     github.com/jamesliu96/ean13
     Copyright (C) 2014 James Liu. http://james.mit-license.org/
-    g.jamesliu.info
+    http://g.jamesliu.info/
 */
 
 var EAN13 = function(a, b, c) {
-    if(typeof a == "undefined" || typeof b == "undefined" || typeof c == "undefined") {
-        console.error("Initialization error");
-    } else {
-        this.code = a.toString() + b.toString() + c.toString();
-    }
     this.isEAN13 = function(code) {
-        code = code.toString();
+        code = code.toString().replace(/\D/g,"");
         if(!code) {
             console.error("Code unavailable");
             return false;
@@ -24,20 +19,20 @@ var EAN13 = function(a, b, c) {
         }
     };
     this.check = function(code) {
-        code = code.toString();
-        var _sumOdd = _sumEven = _sum = 0;
-        for(var i = 0; i <= 11; i++) {
-            if(i % 2 == 0) {
-                _sumOdd += parseInt(code[i]);
+        code = code.toString().replace(/\D/g,"");
+        var _odd = _even = _sum = 0;
+        for(var _i = 0; _i <= 11; _i++) {
+            if(_i % 2 == 0) {
+                _sumOdd += parseInt(code[_i]);
             } else {
-                _sumEven += parseInt(code[i]);
+                _sumEven += parseInt(code[_i]);
             }
         }
         _check = (10 - (_sumOdd + _sumEven * 3) % 10) % 10;
         return _check.toString();
     };
     this.bin = function(code) {
-        code = code.toString();
+        code = code.toString().replace(/\D/g,"");
         var _prefix = _left = _right = "";
         var _bin = _end = "101";
         var _separator = "01010";
@@ -74,11 +69,17 @@ var EAN13 = function(a, b, c) {
             _bin += _map[_left[_i]][_set[_i]];
         }
         _bin += _separator;
-        for(var _i = 0; _i <= 5; _i++) {
-            _bin += _map[_right[_i]][2];
+        for(var _j = 0; _j <= 5; _j++) {
+            _bin += _map[_right[_j]][2];
         }
         return _bin.toString();
     };
+    if(typeof a == "undefined" || typeof b == "undefined" || typeof c == "undefined") {
+        this.code = undefined;
+        console.error("Initialization error");
+    } else {
+        this.code = (a.toString() + b.toString() + c.toString()).replace(/\D/g,"");
+    }
     if (this.isEAN13(this.code)) {
         this.code += this.check(this.code);
         this.bincode = this.bin(this.code);

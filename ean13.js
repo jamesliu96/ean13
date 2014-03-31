@@ -83,7 +83,7 @@ var EAN13 = function(a, b, c) {
     } else {
         this.code = (a.toString() + b.toString() + c.toString()).replace(/\D/g, "");
     }
-    if (this.isEAN13(this.code)) {
+    if(this.isEAN13(this.code)) {
         this.code += this.check(this.code);
         this.bincode = this.bin(this.code);
     } else {

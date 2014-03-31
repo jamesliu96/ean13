@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EAN13 Code Generator</title>
+    <style type="text/css">
+    #code {
+        font-family: monospace, sans-serif;
+        letter-spacing: 5px;
+    }
+    </style>
+    <script type="text/javascript" src="ean13.js"></script>
+</head>
+<body>
+    <div id="barcode"></div>
+    <span id="code">6953066600711</span>
+</body>
+<script type="text/javascript">
+var ean = new EAN13(695, 3066, 60071);
+var bincode = ean.bincode;
+var w = h = 2, e = "", canvas = document.createElement("canvas");
+var ctx = canvas.getContext("2d")
+canvas.width = w * 95;
+canvas.height = h * 40;
+document.getElementById("barcode").appendChild(canvas);
+for(var y = 0, r = 0; r < 40; r++) {
+    for(var x = 0, c = 0; c < 95; c++) {
+        1 == bincode[c] && ctx.fillRect(x, y, w, h)
+        x += w;
+    }
+    y += h;
+}
+</script>
+</html>

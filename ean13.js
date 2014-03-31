@@ -1,5 +1,5 @@
 /*
-    EAN-13 Code Generator v0.1.1
+    EAN-13 Code Generator v0.1.2
     github.com/jamesliu96/ean13
     Copyright (C) 2014 James Liu. http://james.mit-license.org/
     http://g.jamesliu.info/
@@ -23,12 +23,12 @@ var EAN13 = function(a, b, c) {
         var _odd = _even = _sum = 0;
         for(var _i = 0; _i <= 11; _i++) {
             if(_i % 2 == 0) {
-                _sumOdd += parseInt(code[_i]);
+                _odd += parseInt(code[_i]);
             } else {
-                _sumEven += parseInt(code[_i]);
+                _even += parseInt(code[_i]);
             }
         }
-        _check = (10 - (_sumOdd + _sumEven * 3) % 10) % 10;
+        _check = (10 - (_odd + _even * 3) % 10) % 10;
         return _check.toString();
     };
     this.bin = function(code) {
@@ -72,6 +72,7 @@ var EAN13 = function(a, b, c) {
         for(var _j = 0; _j <= 5; _j++) {
             _bin += _map[_right[_j]][2];
         }
+        _bin += _end;
         return _bin.toString();
     };
     if(typeof a == "undefined" || typeof b == "undefined" || typeof c == "undefined") {

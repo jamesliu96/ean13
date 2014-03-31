@@ -4,7 +4,7 @@ EAN13
 Introduction
 ------
 
-JavaScript EAN13 code generator.
+JavaScript EAN13 code generator. [DEMO](http://g.jamesliu.info/ean13/)
 
 Use the code
 ------

@@ -7,7 +7,7 @@
 
 var EAN13 = function(a, b, c) {
     this.isEAN13 = function(code) {
-        code = code.toString().replace(/\D/g,"");
+        code = code.toString().replace(/\D/g, "");
         if(!code) {
             console.error("Code unavailable");
             return false;
@@ -19,7 +19,7 @@ var EAN13 = function(a, b, c) {
         }
     };
     this.check = function(code) {
-        code = code.toString().replace(/\D/g,"");
+        code = code.toString().replace(/\D/g, "");
         var _odd = _even = _sum = 0;
         for(var _i = 0; _i <= 11; _i++) {
             if(_i % 2 == 0) {
@@ -32,7 +32,7 @@ var EAN13 = function(a, b, c) {
         return _check.toString();
     };
     this.bin = function(code) {
-        code = code.toString().replace(/\D/g,"");
+        code = code.toString().replace(/\D/g, "");
         var _prefix = _left = _right = "";
         var _bin = _end = "101";
         var _separator = "01010";
@@ -78,7 +78,7 @@ var EAN13 = function(a, b, c) {
         this.code = undefined;
         console.error("Initialization error");
     } else {
-        this.code = (a.toString() + b.toString() + c.toString()).replace(/\D/g,"");
+        this.code = (a.toString() + b.toString() + c.toString()).replace(/\D/g, "");
     }
     if (this.isEAN13(this.code)) {
         this.code += this.check(this.code);

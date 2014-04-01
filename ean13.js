@@ -52,7 +52,7 @@ EAN13.prototype.isEAN13 = function(code) {
     if(!code)
         return console.error("Code unavailable") || false;
     else if(code.length != 12)
-        return console.warn("Illegal length") || false;
+        return console.error("Illegal length") || false;
     return true;
 };
 
@@ -106,4 +106,28 @@ EAN13.prototype.bin = function(code) {
     _bin += _end;
     return _bin.toString();
 };
-    
+
+EAN13.prototype.draw = function(id, size) {
+    if(this.bincode) {
+        size = size && parseInt(size);
+        if(id && size) {
+            var _canvas = document.createElement("canvas");
+            var _ctx = _canvas.getContext("2d")
+            _canvas.width = size * 95;
+            _canvas.height = size * 50;
+            document.getElementById(id.toString()).appendChild(_canvas);
+            for(var _y = 0, _r = 0; _r < 50; _r++) {
+                for(var _x = 0, _t = 0; _t < 95; _t++) {
+                    this.bincode[_t] == 1 && _ctx.fillRect(_x, _y, size, size)
+                    _x += size;
+                }
+                _y += size;
+            }
+            return;
+        } else {
+            return console.error("Invalid argument");
+        }
+    } else {
+        return console.error("Code unavailable");
+    }
+};

@@ -15,26 +15,44 @@
     }
     </style>
     <script type="text/javascript" src="ean13.js"></script>
+    <script type="text/javascript">
+    function $(id) {
+        return document.getElementById(id);
+    }
+    </script>
 </head>
 <body>
     <div id="barcode"></div>
-    <input id="code" value="695306660071" maxlength="12" onkeyup="r();value=value.replace(/[^\d]/g,'');x();" />
+    <input id="code" type="text" value="695306660071" maxlength="12" onkeyup="r();value=value.replace(/[^\d]/g,'');x()" />
+    <input id="download" value="Download" type="submit" onmouseup="d()" />
     <p>Change the code above to get your own EAN13 barcode.</p><br>
     <p>By <a href="/">James Liu</a></p>
     <p>GitHub: <a href="https://github.com/jamesliu96" target="_blank">@jamesliu96</a></p>
 </body>
 <script type="text/javascript">
 function r() {
-    var _p = document.getElementById("barcode");
-    var _n = document.getElementById("ean13");
+    var _p = $("barcode");
+    var _n = $("ean13");
     if(_p && _n)
         _p.removeChild(_n);
     return;
 }
 function x() {
-    if(code.value.length == 12) {
-        var ean = new EAN13(document.getElementById("code").value);
+    var ean = new EAN13($("code").value);
+    if(ean.bincode) {
+        $("download").disabled = "";
+        var ean = new EAN13($("code").value);
         ean.draw("barcode", 2);
+    } else {
+        $("download").disabled = "disabled";
+    }
+    return;
+}
+function d() {
+    if($("ean13")) {
+        window.location.href = $("ean13").toDataURL();
+    } else {
+        console.error("Cannot download");
     }
     return;
 }

@@ -5,19 +5,38 @@
     <style type="text/css">
     #code {
         font-family: monospace, sans-serif;
-        /*letter-spacing: 5px;*/
+        font-size: 16px;
+        letter-spacing: 5px;
+        width: 180px;
+    }
+    p {
+        font-family: monospace, sans-serif;
+        font-size: 16px;
     }
     </style>
     <script type="text/javascript" src="ean13.js"></script>
 </head>
 <body>
     <div id="barcode"></div>
-    <input id="code" value="695306660071" maxlength="12" onkeyup="x();value=value.replace(/[^\d]/g,'')" />
+    <input id="code" value="695306660071" maxlength="12" onkeyup="r();value=value.replace(/[^\d]/g,'');x();" />
+    <p>Change the code above to get your own EAN13 barcode.</p><br>
+    <p>By <a href="/">James Liu</a></p>
+    <p>GitHub: <a href="https://github.com/jamesliu96" target="_blank">@jamesliu96</a></p>
 </body>
 <script type="text/javascript">
+function r() {
+    var _p = document.getElementById("barcode");
+    var _n = document.getElementById("ean13");
+    if(_p && _n)
+        _p.removeChild(_n);
+    return;
+}
 function x() {
-    var ean = new EAN13(document.getElementById("code").value);
-    ean.draw("barcode", 2);
+    if(code.value.length == 12) {
+        var ean = new EAN13(document.getElementById("code").value);
+        ean.draw("barcode", 2);
+    }
+    return;
 }
 x();
 </script>

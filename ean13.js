@@ -28,6 +28,8 @@
 *     bincode: '10100010110100111011001100110110111101010001101010100111010100001000100100100011101001101100101'
 * }
 * 
+* Call article.draw(id, size) to draw the code on the 
+* 
 * That's it! {@link http://g.jamesliu.info/ean13|DEMO}
 *
 * "As far as the laws of mathematics refer to reality, they are not certain."
@@ -124,6 +126,7 @@ EAN13.prototype.draw = function(id, size) {
             var _ctx = _canvas.getContext("2d")
             _canvas.width = size * 95;
             _canvas.height = size * 50;
+            _canvas.id = "ean13";
             document.getElementById(id.toString()).appendChild(_canvas);
             for(var _y = 0, _r = 0; _r < 50; _r++) {
                 for(var _x = 0, _t = 0; _t < 95; _t++) {

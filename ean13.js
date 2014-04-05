@@ -1,9 +1,9 @@
-//  _______   ________  ________     _____  ________            ___  ________
-// |\  ___ \ |\   __  \|\   ___  \  / __  \|\_____  \          |\  \|\   ____\
-// \ \   __/|\ \  \|\  \ \  \\ \  \|\/_|\  \|____|\ /_         \ \  \ \  \___|_
-//  \ \  \_|/_\ \   __  \ \  \\ \  \|/ \ \  \    \|\  \      __ \ \  \ \_____  \
-//   \ \  \_|\ \ \  \ \  \ \  \\ \  \   \ \  \  __\_\  \ ___|\  \\_\  \|____|\  \
-//    \ \_______\ \__\ \__\ \__\\ \__\   \ \__\|\_______\\__\ \________\____\_\  \
+//  _______   ________  ________     _____  ________            ___  ________      
+// |\  ___ \ |\   __  \|\   ___  \  / __  \|\_____  \          |\  \|\   ____\     
+// \ \   __/|\ \  \|\  \ \  \\ \  \|\/_|\  \|____|\ /_         \ \  \ \  \___|_    
+//  \ \  \_|/_\ \   __  \ \  \\ \  \|/ \ \  \    \|\  \      __ \ \  \ \_____  \   
+//   \ \  \_|\ \ \  \ \  \ \  \\ \  \   \ \  \  __\_\  \ ___|\  \\_\  \|____|\  \  
+//    \ \_______\ \__\ \__\ \__\\ \__\   \ \__\|\_______\\__\ \________\____\_\  \ 
 //     \|_______|\|__|\|__|\|__| \|__|    \|__|\|_______\|__|\|________|\_________\
 //                                                                     \|_________|
 
@@ -37,6 +37,8 @@
 *                                                          -- Albert Einstein
 */
 
+"use strict";
+
 var EAN13 = function() {
     if(arguments.length > 0) {
         this.code = "";
@@ -69,7 +71,7 @@ EAN13.prototype.isEAN13 = function(code) {
 
 EAN13.prototype.check = function(code) {
     code = this.format(code);
-    var _odd = _even = 0;
+    var _odd = 0, _even = 0;
     for(var _i = 0; _i <= 11; _i++)
         _i % 2 == 0 ? _odd += parseInt(code[_i]) : _even += parseInt(code[_i]);
     return ((10 - (_odd + _even * 3) % 10) % 10).toString();
@@ -77,10 +79,8 @@ EAN13.prototype.check = function(code) {
 
 EAN13.prototype.bin = function(code) {
     code = this.format(code);
-    var _prefix = _left = _right = "";
-    var _bin = _end = "101";
+    var _bin = "101", _end = "101";
     var _separator = "01010";
-    var _set = [];
     var _charset = {
         0: [0, 0, 0, 0, 0, 0],
         1: [0, 0, 1, 0, 1, 1],
@@ -105,10 +105,10 @@ EAN13.prototype.bin = function(code) {
         8: ["0110111", "0001001", "1001000"],
         9: ["0001011", "0010111", "1110100"]
     };
-    _prefix = code.slice(0, 1);
-    _left = code.slice(1, 7);
-    _right = code.slice(7, 13);
-    _set = _charset[_prefix];
+    var _prefix = code.slice(0, 1);
+    var _left = code.slice(1, 7);
+    var _right = code.slice(7, 13);
+    var _set = _charset[_prefix];
     for(var _i = 0; _i <= 5; _i++)
         _bin += _map[_left[_i]][_set[_i]];
     _bin += _separator;

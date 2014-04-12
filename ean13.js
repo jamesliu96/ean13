@@ -8,6 +8,7 @@
 //                                                                     \|_________|
 
 /**
+* @version      0.1.6
 * @author       James Liu http://g.jamesliu.info @jamesliu96 <james@jamesliu.info>
 * @copyright    2014 James Liu
 * @license      {@link http://james.mit-license.org|MIT License}

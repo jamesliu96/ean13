@@ -4,7 +4,7 @@ EAN13
 Introduction
 ------
 
-JavaScript EAN13 code generator. [DEMO](http://g.jamesliu.info/ean13/)
+JavaScript EAN13 code generator. [DEMO](http://jamesliu.info/ean13/)
 
 Use the code
 ------
@@ -18,7 +18,7 @@ V2EX Post
 
 代码在这里：https://github.com/jamesliu96/ean13/blob/master/ean13.js
 
-Demo地址：http://g.jamesliu.info/ean13
+Demo地址：http://jamesliu.info/ean13
 
 EAN13是European Article Number 13的缩写，正如其名，它拥有13位数字，是国际上普遍使用的商品标识码。
 
@@ -99,22 +99,22 @@ EAN13码的结构大体上是这样的：
 
 代码地址： https://github.com/jamesliu96/ean13/blob/master/ean13.js
 
-Demo地址： http://g.jamesliu.info/ean13
+Demo地址： http://jamesliu.info/ean13
 
 欢迎来访 jamesliu96@Github
 
 Copyright (C) 2014 James Liu
 
-http://g.jamesliu.info
+http://jamesliu.info
 
 欢迎转载，转载请署名。
 
 License
 ------
 
-[The MIT License](http://james.mit-license.org/) (MIT)
+The MIT License (MIT)
 
-Copyright (c) 2014 James Liu
+Copyright (c) 2014 James Liu <j@jamesliu.info>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

@@ -9,9 +9,9 @@
 
 /**
 * @version      0.1.6
-* @author       James Liu http://g.jamesliu.info @jamesliu96 <james@jamesliu.info>
+* @author       James Liu http://jamesliu.info @jamesliu96 <j@jamesliu.info>
 * @copyright    2014 James Liu
-* @license      {@link http://james.mit-license.org|MIT License}
+* @license      MIT License
 *
 * @overview
 * EAN13 Code Generator v0.1.6
@@ -31,7 +31,7 @@
 * 
 * Call article.draw(id, size) to draw the code on the canvas.
 * 
-* That's it! {@link http://g.jamesliu.info/ean13|DEMO}
+* That's it! http://ean13.jamesliu.info/
 *
 * "As far as the laws of mathematics refer to reality, they are not certain."
 * "As far as they are certain, they do not refer to reality."

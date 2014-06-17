@@ -29,7 +29,7 @@
 *     bincode: '10100010110100111011001100110110111101010001101010100111010100001000100100100011101001101100101'
 * }
 * 
-* Call article.draw(id, size) to draw the code on the 
+* Call article.draw(id, size) to draw the code on the canvas.
 * 
 * That's it! {@link http://g.jamesliu.info/ean13|DEMO}
 *

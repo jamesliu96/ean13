@@ -7,36 +7,36 @@
 //     \|_______|\|__|\|__|\|__| \|__|    \|__|\|_______\|__|\|________|\_________\
 //                                                                     \|_________|
 
-/**
-* @version      0.1.6
-* @author       James Liu http://jamesliu.info @jamesliu96 <j@jamesliu.info>
-* @copyright    2014 James Liu
-* @license      MIT License
-*
-* @overview
-* EAN13 Code Generator v0.1.6
-* github.com/jamesliu96/ean13
-*
-* By James Liu @jamesliu96
-* Copyright (C) 2014 James Liu
-*
-* Initialize by total 12 digits in any form and any number of arguments:
-* var article = new EAN13(69, "01", 234, [5, "67"], 8, 9);
-*
-* The code and binary code are generated automatically:
-* article: {
-*     code: '6901234567892',
-*     bincode: '10100010110100111011001100110110111101010001101010100111010100001000100100100011101001101100101'
-* }
-* 
-* Call article.draw(id, size) to draw the code on the canvas.
-* 
-* That's it! http://ean13.jamesliu.info/
-*
-* "As far as the laws of mathematics refer to reality, they are not certain."
-* "As far as they are certain, they do not refer to reality."
-*                                                          -- Albert Einstein
-*/
+/*!
+ * @version      0.1.6
+ * @author       James Liu http://jamesliu.info @jamesliu96 <j@jamesliu.info>
+ * @copyright    2014 James Liu
+ * @license      MIT License
+ *
+ * @overview
+ * EAN13 Code Generator v0.1.6
+ * github.com/jamesliu96/ean13
+ *
+ * By James Liu @jamesliu96
+ * Copyright (C) 2014 James Liu
+ *
+ * Initialize by total 12 digits in any form and any number of arguments:
+ * var article = new EAN13(69, "01", 234, [5, "67"], 8, 9);
+ *
+ * The code and binary code are generated automatically:
+ * article: {
+ *     code: '6901234567892',
+ *     bincode: '10100010110100111011001100110110111101010001101010100111010100001000100100100011101001101100101'
+ * }
+ * 
+ * Call article.draw(id, size) to draw the code on the canvas.
+ * 
+ * That's it! http://ean13.jamesliu.info/
+ *
+ * "As far as the laws of mathematics refer to reality, they are not certain."
+ * "As far as they are certain, they do not refer to reality."
+ *                                                          -- Albert Einstein
+ */
 
 "use strict";
 

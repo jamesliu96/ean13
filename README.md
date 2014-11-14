@@ -4,12 +4,13 @@ EAN13
 Introduction
 ------
 
-JavaScript EAN13 code generator. [DEMO](http://jamesliu.info/ean13/)
+JavaScript and Ruby EAN13 code generator. [JS VERSION DEMO](http://ean13.jamesliu.info/)
 
 Use the code
 ------
 
-- `ean13.js` (main library)
+- `ean13.js` (JavaScript library)
+- `ean13.rb` (Ruby library)
 
 V2EX Post
 ------

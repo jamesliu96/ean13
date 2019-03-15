@@ -4,7 +4,7 @@ EAN13
 Introduction
 ------
 
-JavaScript and Ruby EAN13 code generator. [JS VERSION DEMO](http://ean13.jamesliu.info/)
+JavaScript and Ruby EAN13 code generator. [JS VERSION DEMO](https://ean13.jamesliu.info/)
 
 Use the code
 ------
@@ -19,7 +19,7 @@ V2EX Post
 
 代码在这里：https://github.com/jamesliu96/ean13/blob/master/ean13.js
 
-Demo地址：http://jamesliu.info/ean13
+Demo地址：https://ean13.jamesliu.info
 
 EAN13是European Article Number 13的缩写，正如其名，它拥有13位数字，是国际上普遍使用的商品标识码。
 
@@ -98,15 +98,9 @@ EAN13码的结构大体上是这样的：
 
 前面加上`101`起始符后面加上`101`终止符，前6位和后6位之间加上`01010`分隔符即可。
 
-代码地址： https://github.com/jamesliu96/ean13/blob/master/ean13.js
-
-Demo地址： http://jamesliu.info/ean13
-
-欢迎来访 jamesliu96@Github
-
 Copyright (C) 2014 James Liu
 
-http://jamesliu.info
+https://jamesliu.info
 
 欢迎转载，转载请署名。
 

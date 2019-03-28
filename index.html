@@ -31,19 +31,12 @@
 function r() {
     var _p = $("barcode");
     var _n = $("ean13");
-    if(_p && _n)
-        _p.removeChild(_n);
+    if(_p && _n) _p.removeChild(_n);
     return;
 }
 function x() {
     var ean = new EAN13($("code").value);
-    if(ean.bincode) {
-        $("download").disabled = "";
-        var ean = new EAN13($("code").value);
-        ean.draw("barcode", 2);
-    } else {
-        $("download").disabled = "disabled";
-    }
+    ean.draw("barcode", 2);
     return;
 }
 x();
